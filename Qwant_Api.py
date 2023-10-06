@@ -30,13 +30,11 @@ class Qwant_Api:
         "videos": "https://api.qwant.com/v3/egp/search/videos"
     }}
     
-    def __init__(self, headers:dict=headers, session_type:str=SessionType.normal, save_history:bool=False):
+    def __init__(self, headers:dict=headers, session_type:str=SessionType.normal):
         self.headers = headers
         self.session = requests.session()
         self.session.headers = self.headers
         self.session_type = session_type
-        self.save_history = save_history
-        self.history = {}
         
     def get_search(self,
                    q:str,
